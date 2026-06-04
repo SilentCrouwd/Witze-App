@@ -1,4 +1,5 @@
 @use "Variablen" as *;
+
 * {
   padding: 0;
   margin: 0;
@@ -7,7 +8,232 @@
 body {
   background-image: $background-color;
   height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Btn {
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-color;
+  padding: 0.2rem 0.5rem;
+  background-color: $primary-btn-color;
+  font-size: 1rem;
+  border: solid 1px transparent;
+  transition: all 0.5s ease;
+  &__Svg {
+    width: 1.5rem;
+    &--Delete {
+      fill: red;
+    }
+  }
+
+  &:hover {
+    background-color: $headline-color;
+    border-color: $primary-color;
+  }
+  &--Delete {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    &:hover {
+      border-color: $headline-color;
+    }
+
+    &:hover .Btn__Svg--Delete {
+      fill: $text-color;
+      transition: all 0.5s ease;
+    }
+  }
+  &--Inverted {
+    background-color: $headline-color;
+    border: solid 1px $primary-btn-color;
+
+    &:hover {
+      background-color: $primary-btn-color;
+      border-color: $headline-color;
+    }
+  }
 }
 
 .App {
+  height: 96%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+  height: 20%;
+
+  &__Headline {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: $headline-color;
+    -webkit-text-stroke: 1px $text-color;
+  }
+}
+
+.Main {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: $box-color;
+  box-shadow: $box-schadow;
+  backdrop-filter: blur(14px);
+
+  &__Joke {
+    color: $text-color;
+    font-size: 1.5rem;
+    padding: 3rem 1.5rem;
+  }
+
+  &__BtnContainer {
+    width: 50%;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+.Footer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 20%;
+
+  &__Headline {
+    @extend .Header__Headline;
+    font-size: 1.5rem;
+  }
+  &__JokeContainer {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+  }
+  &__JokeCard {
+    scroll-snap-align: center;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__SavedJoke {
+    color: $text-color;
+  }
+}
+
+@media (max-height: 750px) {
+  .App {
+  }
+  .Header {
+    height: 10%;
+    margin-top: 1rem;
+
+    &__Headline {
+      font-size: 2rem;
+    }
+  }
+
+  .Main {
+    gap: 0.5rem;
+    height: 40%;
+    &__Joke {
+      padding: 1rem 1rem;
+      font-size: 1.5rem;
+    }
+    &__BtnContainer {
+      margin: 0rem 0;
+    }
+  }
+  .Footer {
+    margin-top: 0.5rem;
+    height: 19%;
+
+    &__Headline {
+      font-size: 1.5rem;
+    }
+
+    &__JokeCard {
+      padding: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .Header {
+    height: 30%;
+    margin-top: 1rem;
+
+    &__Headline {
+      font-size: 5rem;
+    }
+  }
+
+  .Main {
+    gap: 0.5rem;
+    height: 40%;
+    width: 80%;
+    &__Joke {
+      font-size: 2rem;
+    }
+  }
+  .Footer {
+    &__Headline {
+      font-size: 2rem;
+    }
+
+    &__SavedJoke {
+      font-size: 1.5rem;
+    }
+  }
+  .Btn {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1400px) {
+  .Header {
+    height: 30%;
+    margin-top: 1rem;
+
+    &__Headline {
+      font-size: 6rem;
+    }
+  }
+
+  .Main {
+    &__Joke {
+      padding: 1rem 1rem;
+      font-size: 2.5rem;
+    }
+  }
+  .Footer {
+    &__Headline {
+      font-size: 2.5rem;
+    }
+
+    &__SavedJoke {
+      font-size: 2rem;
+    }
+  }
+  .Btn {
+    font-size: 2rem;
+  }
 }
