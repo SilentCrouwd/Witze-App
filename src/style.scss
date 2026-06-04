@@ -78,7 +78,7 @@ body {
     font-size: 3.5rem;
     font-weight: bold;
     color: $headline-color;
-    -webkit-text-stroke: 1px $text-color;
+    -webkit-text-stroke: 2px $primary-color;
   }
 }
 
@@ -117,6 +117,7 @@ body {
 
   &__Headline {
     @extend .Header__Headline;
+    -webkit-text-stroke: 1px $primary-color;
     font-size: 1.5rem;
   }
   &__JokeContainer {
@@ -233,5 +234,60 @@ body {
   }
   .Btn {
     font-size: 2rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: $background-color-dark;
+  }
+
+  .Btn {
+    color: $text-color-dark;
+    background-color: $primary-btn-color-dark;
+    border: solid 1px transparent;
+
+    &:hover {
+      background-color: $headline-color-dark;
+      border-color: $primary-color-dark;
+    }
+    &--Delete {
+      background-color: transparent;
+      &:hover {
+        border-color: $headline-color-dark;
+      }
+
+      &:hover .Btn__Svg--Delete {
+        fill: $text-color-dark;
+      }
+    }
+    &--Inverted {
+      background-color: $headline-color-dark;
+      border: solid 1px $primary-btn-color-dark;
+
+      &:hover {
+        background-color: $primary-btn-color-dark;
+        border-color: $headline-color-dark;
+      }
+    }
+  }
+
+  .Header {
+    &__Headline {
+      color: $headline-color-dark;
+    }
+  }
+
+  .Main {
+    background-color: $box-color-dark;
+    box-shadow: $box-schadow-dark;
+
+    &__Joke {
+      color: $text-color-dark;
+    }
+  }
+  .Footer {
+    &__SavedJoke {
+      color: $text-color-dark;
+    }
   }
 }
