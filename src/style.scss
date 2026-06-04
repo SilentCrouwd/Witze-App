@@ -124,12 +124,10 @@ body {
     align-items: start;
     flex-direction: column;
     overflow-x: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
     scrollbar-width: none;
+    scroll-behavior: smooth;
   }
   &__JokeCard {
-    scroll-snap-align: center;
     padding: 1.5rem;
     display: flex;
     justify-content: center;
