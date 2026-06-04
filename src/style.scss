@@ -281,6 +281,7 @@ body {
   .Header {
     &__Headline {
       color: $headline-color-dark;
+      -webkit-text-stroke: 2px $primary-btn-color-dark;
     }
   }
 
@@ -295,6 +296,9 @@ body {
   .Footer {
     &__SavedJoke {
       color: $text-color-dark;
+    }
+    &__Headline {
+      -webkit-text-stroke: 1px $primary-btn-color-dark;
     }
   }
 }
