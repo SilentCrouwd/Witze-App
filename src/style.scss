@@ -66,6 +66,10 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  background-image: $bg-Img;
+  background-position: top right;
+  background-size: 15%;
+  background-repeat: no-repeat;
 }
 
 .Header {
@@ -239,6 +243,9 @@ body {
 @media (prefers-color-scheme: dark) {
   body {
     background-image: $background-color-dark;
+  }
+  .App {
+    background-image: $bg-Img-dark;
   }
 
   .Btn {

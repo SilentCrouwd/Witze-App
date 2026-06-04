@@ -5,12 +5,13 @@ $background-color: linear-gradient(
   rgb(230, 221, 233) 90%,
   rgb(197, 0, 247)
 );
-$primary-color: rgb(197, 0, 247);
+$primary-color: rgb(121, 0, 151);
 $text-color: black;
 $headline-color: transparent;
 $box-schadow: 0px 0px 15px 1px black;
-$primary-btn-color: rgb(197, 0, 247);
+$primary-btn-color: rgb(121, 0, 151);
 $box-color: rgba(132, 132, 133, 0.164);
+$bg-Img: url(./assets/silDark.png);
 
 $background-color-dark: linear-gradient(
   to bottom right,
@@ -25,3 +26,4 @@ $headline-color-dark: transparent;
 $box-schadow-dark: 0px 0px 15px 1px white;
 $primary-btn-color-dark: rgb(197, 0, 247);
 $box-color-dark: rgba(255, 255, 255, 0.192);
+$bg-Img-dark: url(./assets/SilLogo.png);
