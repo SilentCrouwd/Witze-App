@@ -8,27 +8,25 @@
   </head>
   <body>
     <div class="App">
-      <div class="App__Header">
-        <h1 class="App__Header__Headline">Witze App</h1>
+      <div class="Header">
+        <h1 class="Header__Headline">Witze App</h1>
       </div>
-      <div class="App__Main">
-        <h3 class="App__Main__Joke">
+      <div class="Main">
+        <h3 class="Main__Joke">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis error
           delectus similique minus nulla esse quia officia laboriosam ullam
           veniam.
         </h3>
-        <div class="App__Main__BtnContainer">
-          <button class="App__Main__BtnContainer__Btn">Neuen Witz Laden</button>
-          <button
-            class="App__Main__BtnContainer__Btn App__Main__BtnContainer__Btn--Inverted"
-          >
+        <div class="Main__BtnContainer">
+          <button class="Btn Btn--Load">Neuen Witz Laden</button>
+          <button class="Btn Btn--Inverted">
             Witz Speichern
             <svg
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
               id="mdi-file-star-outline"
               viewBox="0 0 24 24"
-              class="App__Main__BtnContainer__Btn__Svg"
+              class="Btn__Svg"
             >
               <path
                 d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2M18 20H6V4H13V9H18V20M9.5 18L10.2 15.2L8 13.3L10.9 13.1L12 10.4L13.1 13L16 13.2L13.8 15.1L14.5 17.9L12 16.5L9.5 18Z"
@@ -37,17 +35,17 @@
           </button>
         </div>
       </div>
-      <div class="App__Footer">
-        <h4 class="App__Footer__Headline">Gespeicherte Witze</h4>
-        <div class="App__Footer__JokeListeContainer">
-          <div class="App__Footer__JokeListe">
-            <p class="App__Footer__JokeListe__SavedJoke">Hier iste ein Witz</p>
-            <button class="App__Footer__JokeListe__DeleteBtn">
+      <div class="Footer">
+        <h4 class="Footer__Headline">Gespeicherte Witze</h4>
+        <div class="Footer__JokeContainer">
+          <div class="Footer__JokeListe">
+            <p class="Footer__SavedJoke">Hier iste ein Witz</p>
+            <button class="Btn Btn--Delete">
               <svg
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
                 id="mdi-delete-forever"
-                class="App__Footer__JokeListe__DeleteBtn__Svg"
+                class="Btn__Svg Btn__Svg--Delete"
                 viewBox="0 0 24 24"
               >
                 <path
