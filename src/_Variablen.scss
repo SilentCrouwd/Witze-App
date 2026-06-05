@@ -14,19 +14,20 @@ $box-schadow: 0px 0px 15px 1px black;
 $primary-btn-color: rgba(116, 153, 221);
 $btn-textcolor: rgba(10, 36, 106);
 $box-color: rgba(166, 165, 191, 0.452);
-$bg-Img: url(./assets/xp.png);
+$bg-Img: url(./assets/xpnew.png);
 
 $background-color-dark: linear-gradient(
   to bottom right,
-  rgb(197, 0, 247),
-  rgb(41, 0, 51) 25%,
-  rgb(41, 0, 51) 70%,
-  rgb(197, 0, 247)
+  rgb(40, 42, 54),
+  rgb(61, 59, 61) 25%,
+  rgb(44, 43, 44) 70%,
+  rgb(40, 42, 54)
 );
-$primary-color-dark: rgb(197, 0, 247);
+$primary-color-dark: rgb(255, 121, 198);
 $text-color-dark: white;
 $headline-color-dark: transparent;
 $box-schadow-dark: 0px 0px 15px 1px white;
-$primary-btn-color-dark: rgb(197, 0, 247);
-$box-color-dark: rgba(255, 255, 255, 0.192);
-$bg-Img-dark: url(./assets/SilLogo.png);
+$primary-btn-color-dark: rgb(255, 121, 198);
+$box-color-dark: rgb(92, 73, 119);
+$bg-Img-dark: url(./assets/Linux.png);
+$border-color-dark: rgba(80, 250, 123);

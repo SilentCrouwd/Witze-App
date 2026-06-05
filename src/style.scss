@@ -69,10 +69,6 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background-image: $bg-Img;
-  background-position: top right;
-  background-size: 30%;
-  background-repeat: no-repeat;
 }
 
 .Header {
@@ -101,7 +97,18 @@ body {
   background-color: $box-color;
   backdrop-filter: blur(14px);
   border: solid 15px $border-color;
-
+  position: relative;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: $bg-Img;
+    background-size: 20%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    opacity: 1;
+  }
   &__Joke {
     color: $text-color;
     font-size: 1.5rem;
@@ -249,7 +256,6 @@ body {
     background-image: $background-color-dark;
   }
   .App {
-    background-image: $bg-Img-dark;
   }
 
   .Btn {
@@ -292,7 +298,11 @@ body {
   .Main {
     background-color: $box-color-dark;
     box-shadow: $box-schadow-dark;
-
+    border: solid 2px $border-color-dark;
+    &::before {
+      background-image: $bg-Img-dark;
+      background-size: 15%;
+    }
     &__Joke {
       color: $text-color-dark;
     }
