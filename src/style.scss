@@ -1,6 +1,7 @@
 @use "Variablen" as *;
 
 * {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -14,11 +15,13 @@ body {
 
 .Btn {
   cursor: pointer;
+  font-style: italic;
   font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $text-color;
+  color: $btn-textcolor;
+  border-radius: 3px;
   padding: 0.2rem 0.5rem;
   background-color: $primary-btn-color;
   font-size: 1rem;
@@ -32,7 +35,7 @@ body {
   }
 
   &:hover {
-    background-color: $headline-color;
+    background-color: transparent;
     border-color: $primary-color;
   }
   &--Delete {
@@ -40,7 +43,7 @@ body {
     height: fit-content;
     background-color: transparent;
     &:hover {
-      border-color: $headline-color;
+      border-color: transparent;
     }
 
     &:hover .Btn__Svg--Delete {
@@ -49,12 +52,12 @@ body {
     }
   }
   &--Inverted {
-    background-color: $headline-color;
+    background-color: transparent;
     border: solid 1px $primary-btn-color;
 
     &:hover {
       background-color: $primary-btn-color;
-      border-color: $headline-color;
+      border-color: transparent;
     }
   }
 }
@@ -68,7 +71,7 @@ body {
   gap: 1rem;
   background-image: $bg-Img;
   background-position: top right;
-  background-size: 15%;
+  background-size: 30%;
   background-repeat: no-repeat;
 }
 
@@ -82,7 +85,7 @@ body {
     font-size: 3.5rem;
     font-weight: bold;
     color: $headline-color;
-    -webkit-text-stroke: 2px $primary-color;
+    -webkit-text-stroke: 2px $primary-stroke;
   }
 }
 
@@ -94,9 +97,10 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  border-radius: 4px 4px 0 0;
   background-color: $box-color;
-  box-shadow: $box-schadow;
   backdrop-filter: blur(14px);
+  border: solid 15px $border-color;
 
   &__Joke {
     color: $text-color;
@@ -121,7 +125,7 @@ body {
 
   &__Headline {
     @extend .Header__Headline;
-    -webkit-text-stroke: 1px $primary-color;
+    -webkit-text-stroke: 1px $primary-stroke;
     font-size: 1.5rem;
   }
   &__JokeContainer {

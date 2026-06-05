@@ -1,17 +1,20 @@
 $background-color: linear-gradient(
   to bottom right,
-  rgb(197, 0, 247),
+  rgb(0, 84, 227),
   rgb(231, 231, 231) 10%,
   rgb(230, 221, 233) 90%,
-  rgb(197, 0, 247)
+  rgb(0, 84, 227)
 );
-$primary-color: rgb(121, 0, 151);
+$primary-color: rgb(0, 84, 227);
+$primary-stroke: #738e42;
+$border-color: rgb(0, 71, 203);
 $text-color: black;
-$headline-color: transparent;
+$headline-color: rgb(133, 219, 50);
 $box-schadow: 0px 0px 15px 1px black;
-$primary-btn-color: rgb(121, 0, 151);
-$box-color: rgba(132, 132, 133, 0.164);
-$bg-Img: url(./assets/silDark.png);
+$primary-btn-color: rgba(116, 153, 221);
+$btn-textcolor: rgba(10, 36, 106);
+$box-color: rgba(166, 165, 191, 0.452);
+$bg-Img: url(./assets/xp.png);
 
 $background-color-dark: linear-gradient(
   to bottom right,
