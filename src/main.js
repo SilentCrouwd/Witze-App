@@ -1,15 +1,26 @@
-import { getJoke } from "../api.js";
+import { getJoke, getLocalStorage, jokeList, setLocalStorage } from "../api.js";
 import "./style.scss";
-loadNewJoke();
+const jokeDisplay = document.querySelector(".Main__Joke"); //   Get Joke by Click
+const loadBtnEl = document.querySelector(".Btn--Load");
+const saveBtnEl = document.querySelector(".Btn--Inverted");
 
-function loadNewJoke() {
-  //   Get Joke by Click
+loadBtnEl.addEventListener("click", async () => {
+  const newJoke = await getJoke();
 
-  const loadBtnEl = document.querySelector(".Btn--Load");
-  loadBtnEl.addEventListener("click", async () => {
-    const newJoke = await getJoke();
-    //  Set to Display
-    const jokeDisplay = document.querySelector(".Main__Joke");
-    jokeDisplay.innerHTML = newJoke[0].text;
-  });
+  jokeDisplay.innerText = newJoke[0].text;
+  saveBtnEl.classList.remove("disabled");
+});
+
+saveBtnEl.addEventListener("click", () => {
+  jokeList.push(jokeDisplay.innerText);
+  setLocalStorage();
+});
+
+function renderJokes() {
+  let jokes = getLocalStorage();
 }
+
+//Duplikate vermeiden
+//An Liste Übergeben
+// Witze aus dem Lokal storage laden bei Reload
+//WItz Placeholder

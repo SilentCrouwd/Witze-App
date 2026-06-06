@@ -12,7 +12,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .Btn {
   cursor: pointer;
   font-style: italic;
@@ -154,6 +153,9 @@ body {
   }
 }
 
+.disabled {
+  display: none;
+}
 @media (max-height: 750px) {
   .App {
   }
