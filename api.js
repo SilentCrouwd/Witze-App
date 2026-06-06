@@ -12,7 +12,7 @@ export function setLocalStorage() {
 }
 
 export function getLocalStorage() {
-  if (localStorage.getItem !== "") {
+  if (localStorage.length !== 0) {
     jokeList = JSON.parse(localStorage.getItem("jokes"));
     return jokeList;
   }
