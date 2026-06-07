@@ -76,6 +76,7 @@ body {
 
 .Header {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-top: 2.5rem;
   height: 20%;
@@ -85,6 +86,17 @@ body {
     font-weight: bold;
     color: $headline-color;
     -webkit-text-stroke: 2px $primary-stroke;
+  }
+  &__Dropdown {
+    background-color: $box-color;
+    border: none;
+    margin-top: 0.3rem;
+    font-size: 1.2rem;
+
+    color: $text-color;
+    &__Option {
+      color: $text-color;
+    }
   }
 }
 
@@ -113,7 +125,6 @@ body {
   }
 
   &__BtnContainer {
-    width: 50%;
     margin: 2rem 0;
     display: flex;
     flex-direction: column;
@@ -156,9 +167,7 @@ body {
 .disabled {
   display: none;
 }
-@media (max-height: 750px) {
-  .App {
-  }
+@media (max-height: 500) {
   .Header {
     height: 10%;
     margin-top: 1rem;
@@ -202,6 +211,9 @@ body {
     &__Headline {
       font-size: 5rem;
     }
+    &__Dropdown {
+      font-size: 1.5rem;
+    }
   }
 
   .Main {
@@ -235,6 +247,9 @@ body {
 
     &__Headline {
       font-size: 6rem;
+    }
+    &__Dropdown {
+      font-size: 2rem;
     }
   }
 
@@ -300,6 +315,13 @@ body {
     &__Headline {
       color: $headline-color-dark;
       -webkit-text-stroke: 2px $primary-btn-color-dark;
+    }
+    &__Dropdown {
+      background-color: $box-color-dark;
+      color: $text-color-dark;
+      &__Option {
+        color: $text-color-dark;
+      }
     }
   }
 

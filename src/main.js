@@ -1,36 +1,84 @@
-import { getJoke, getLocalStorage, jokeList, setLocalStorage } from "../api.js";
+import {
+  getJoke,
+  getCategory,
+  getLocalStorage,
+  jokeList,
+  removeJoke,
+  setLocalStorage,
+} from "../api.js";
 import "./style.scss";
 const jokeDisplay = document.querySelector(".Main__Joke"); //   Get Joke by Click
 const loadBtnEl = document.querySelector(".Btn--Load");
 const saveBtnEl = document.querySelector(".Btn--Inverted");
+const dropdown = document.querySelector(".Header__Dropdown");
+let currCategory = undefined;
+addEventListener("DOMContentLoaded", () => {
+  getLocalStorage();
+  renderJokes();
+  setCategorys();
+});
 
-addEventListener("DOMContentLoaded", renderJokes);
+dropdown.addEventListener("change", async () => {
+  currCategory = dropdown.value;
+  console.log(currCategory);
+});
 
 loadBtnEl.addEventListener("click", async () => {
-  const newJoke = await getJoke();
+  const newJoke = await getJoke(currCategory);
 
-  jokeDisplay.innerText = newJoke[0].text;
+  jokeDisplay.innerText = newJoke;
   saveBtnEl.classList.remove("disabled");
 });
 
 saveBtnEl.addEventListener("click", () => {
-  jokeList.push(jokeDisplay.innerText);
-  setLocalStorage();
-  renderJokes();
+  if (localStorage.length === 0) {
+    jokeList.push(jokeDisplay.innerText);
+    setLocalStorage();
+    renderJokes();
+  } else {
+    const jokes = getLocalStorage();
+    const isSaved = jokes.includes(jokeDisplay.innerText);
+    if (isSaved === false) {
+      jokeList.push(jokeDisplay.innerText);
+      setLocalStorage();
+      renderJokes();
+    } else {
+      alert("Der Witz befindet sich schon in der Liste");
+    }
+  }
 });
+window.removeSavedJoke = removeSavedJoke;
+
+async function setCategorys() {
+  const newCategory = await getCategory();
+  console.log(newCategory);
+  newCategory.forEach((elm) => {
+    const option = document.createElement("option");
+    option.value = elm.name;
+    option.textContent = elm.name;
+    option.classList.add("Header__Dropdown__Option");
+    dropdown.appendChild(option);
+  });
+}
+
+function removeSavedJoke(index) {
+  removeJoke(index);
+
+  renderJokes();
+}
 
 function renderJokes() {
-  let jokes = getLocalStorage();
   let html = "";
   const jokeContainer = document.querySelector(".Footer__JokeContainer");
-  if (localStorage.length !== 0) {
-    jokes.forEach((elm) => {
+
+  if (jokeList.length !== 0) {
+    jokeList.forEach((elm, index) => {
       html += `
-  <div class="Footer__JokeCard">
+  <div class="Footer__JokeCard id="${index}" >
             <p class="Footer__SavedJoke">
                   ${elm}    
             </p>
-            <button class="Btn Btn--Delete">
+            <button class="Btn Btn--Delete" onclick="removeSavedJoke(${index})">
               <svg
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,13 +93,13 @@ function renderJokes() {
             </button>
           </div>
   `;
-      jokeContainer.innerHTML = html;
     });
+
+    jokeContainer.innerHTML = html;
   } else {
-    jokeContainer.innerHTML = "Bitte Speichere einen Witz";
+    jokeContainer.innerHTML = "Bisher keine Witze gespeichert";
     jokeContainer.style.color = "white";
     jokeContainer.style.marginTop = "1rem";
   }
 }
-
-//Duplikate vermeiden
+//Duplikate v
