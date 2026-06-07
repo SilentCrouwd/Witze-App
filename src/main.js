@@ -102,4 +102,3 @@ function renderJokes() {
     jokeContainer.style.marginTop = "1rem";
   }
 }
-//Duplikate v
