@@ -74,7 +74,7 @@ function renderJokes() {
   if (jokeList.length !== 0) {
     jokeList.forEach((elm, index) => {
       html += `
-  <div class="Footer__JokeCard id="${index}" >
+  <div class="Footer__JokeCard"id="${index}" >
             <p class="Footer__SavedJoke">
                   ${elm}    
             </p>
@@ -98,7 +98,7 @@ function renderJokes() {
     jokeContainer.innerHTML = html;
   } else {
     jokeContainer.innerHTML = "Bisher keine Witze gespeichert";
-    jokeContainer.style.color = "white";
+    jokeContainer.style.color = "black";
     jokeContainer.style.marginTop = "1rem";
   }
 }

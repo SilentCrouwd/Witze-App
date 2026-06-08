@@ -1,8 +1,6 @@
 const API_ENDPOINT = "https://witzapi.de/api/joke/";
 const API_CATHEGORIE = "https://witzapi.de/api/category/";
 
-const API_ENDPOINT_CATHEGORY =
-  "https://witzapi.de/api/joke/?limit=1&category=antiwitze&language=de";
 export let jokeList = [];
 
 export async function getCategory() {
@@ -24,10 +22,6 @@ export async function getJoke(category) {
     const newJoke = await response.json();
     return newJoke[0].text;
   }
-
-  const response = await fetch(API_ENDPOINT);
-  const newJoke = await response.json();
-  return newJoke[0].text;
 }
 
 export function setLocalStorage() {
