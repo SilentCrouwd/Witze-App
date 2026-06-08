@@ -23,7 +23,7 @@ body {
   border-radius: 3px;
   padding: 0.2rem 0.5rem;
   background-color: $primary-btn-color;
-  font-size: 1rem;
+  font-size: 1.5rem;
   border: solid 1px transparent;
   transition: all 0.5s ease;
   &__Svg {
@@ -78,7 +78,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   height: 20%;
 
   &__Headline {
@@ -90,7 +90,7 @@ body {
   &__Dropdown {
     background-color: $box-color;
     border: none;
-    margin-top: 0.3rem;
+    margin: 0.3rem 0;
     font-size: 1.2rem;
 
     color: $text-color;
@@ -101,8 +101,8 @@ body {
 }
 
 .Main {
-  width: 90%;
-  height: 60%;
+  width: 70%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -167,7 +167,7 @@ body {
 .disabled {
   display: none;
 }
-@media (max-height: 500) {
+@media (max-height: 500px) {
   .Header {
     height: 10%;
     margin-top: 1rem;
@@ -178,6 +178,7 @@ body {
   }
 
   .Main {
+    width: 50%;
     gap: 0.5rem;
     height: 40%;
     &__Joke {
@@ -219,7 +220,7 @@ body {
   .Main {
     gap: 0.5rem;
     height: 40%;
-    width: 80%;
+    width: 40%;
     &__Joke {
       font-size: 2rem;
     }
